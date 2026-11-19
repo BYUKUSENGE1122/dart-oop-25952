@@ -170,3 +170,20 @@ After identifying and correcting the five bugs, I executed the program successfu
 Bag a starts with 0 items. Calling add() increases it to 1. Setting it to -5 is rejected because the setter accepts only values greater than or equal to 0. Therefore, it prints 1.
 
 BigBag b overrides add() and calls super.add() twice. Calling b.add() twice increases the items to 4. Adding another 1 through the setter gives 5. Therefore, it prints 5.
+
+### Part 5: Real Output and Comparison
+
+**Actual Output:**
+
+```text
+1
+5
+```
+
+**Was my prediction correct?**
+
+Yes, my prediction was correct. The actual output matches my predicted output exactly.
+
+The first output is `1` because the Bag setter rejects negative values. The second output is `5` because each call to `BigBag.add()` increases the number of items by 2, and the final setter increases the value by another 1.
+
+This confirms that I correctly understood inheritance, method overriding, the `super` keyword, and setter validation in Dart.
