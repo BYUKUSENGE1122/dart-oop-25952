@@ -52,3 +52,63 @@ class BusCard {
     }
   }
 }
+
+class StudentCard extends BusCard {
+  int _discount;
+
+  // Constructor
+  StudentCard(String owner, int balance, int discount)
+    : _discount = discount,
+      super(owner, balance);
+
+  // Override showInfo method
+  @override
+  void showInfo() {
+    super.showInfo();
+    print('Student discount: $_discount%');
+  }
+
+  // TODO: Override pay method
+  @override
+  void pay(int fare) {
+    int off = fare * _discount ~/ 100;
+
+    print('Student discount: $off RWF');
+
+    super.pay(fare - off);
+  }
+}
+
+void main() {
+  // Create a normal bus card
+  BusCard myCard = BusCard('Satto BYUKUSENGE', 1520);
+
+  // Test the owner setter with an invalid name
+  myCard.owner = 'Al';
+
+  // Set the correct owner name
+  myCard.owner = 'Satto BYUKUSENGE';
+
+  // Display card information
+  myCard.showInfo();
+
+  // Test top-up
+  myCard.topUp(100);
+  myCard.topUp(2000);
+
+  // Pay bus fare twice
+  myCard.pay(252);
+  myCard.pay(252);
+
+  // Display updated information
+  myCard.showInfo();
+
+  // Create a student card
+  StudentCard student = StudentCard('Satto BYUKUSENGE', 1520, 12);
+
+  // Test student payment
+  student.pay(252);
+
+  // Display student card information
+  student.showInfo();
+}
