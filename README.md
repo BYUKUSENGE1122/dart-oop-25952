@@ -159,3 +159,14 @@ After identifying and correcting the five bugs, I executed the program successfu
 ```
 
 **Conclusion:** All five bugs were corrected successfully. The program now initializes fields correctly, uses inheritance and constructors properly, validates battery values through a setter, and accesses the getter correctly. The final output matches the assignment requirement.
+
+### Part 5: Output Prediction.
+
+// My Predicted output:
+1
+5
+
+//OverView About my prediction output:
+Bag a starts with 0 items. Calling add() increases it to 1. Setting it to -5 is rejected because the setter accepts only values greater than or equal to 0. Therefore, it prints 1.
+
+BigBag b overrides add() and calls super.add() twice. Calling b.add() twice increases the items to 4. Adding another 1 through the setter gives 5. Therefore, it prints 5.
